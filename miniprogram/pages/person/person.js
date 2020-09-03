@@ -1,5 +1,5 @@
 // pages/person/person.js
-import request from "miniprogram\request.js"
+import {apiGetUserMoney,apiGetUserSlogan,apiGetUserNickname} from '../../ifocusApi/api.js'
 
 const app = getApp()
 Page({
@@ -9,8 +9,10 @@ Page({
    */
   data: {
     credit:"0",    //信用分
-    openid: "",
-    money: request.postRequest({'argc':'info','id':2,'res':'nickname','target':'user'}),
+    openid: "2",
+    money: "",
+    slogan: "",
+    nickname: ""
   },
    
   
@@ -64,7 +66,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.updateDataFromCloud()
+    this.updateDataFromCloud();
+    var that = this;
+    var id = this.data.openid;
+    apiGetUserMoney(that,id);
+    apiGetUserSlogan(that,id);
+    apiGetUserNickname(that,id);
   },
 
   /**
@@ -117,4 +124,3 @@ Page({
 
   }
 })
-

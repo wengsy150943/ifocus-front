@@ -1,5 +1,5 @@
 <!--pages/scorehistory/scorehistory.wxml-->
-<view class="title">预约历史纪录</view>
+<view class="title">历史纪录</view>
     <view class="page__bd">
 
         
@@ -21,7 +21,14 @@
                 <view class="weui-cell__ft">失败</view>
             </view>
         </view>
-
+        
+        <view wx:for="{{log}}" >
+            <view class="weui-cell weui-cell_example ">
+                <view class="weui-cell__bd">时间</view>
+                <view class="weui-cell__ft" style="font-size:10pt">{{item}}</view>
+            </view>
+        </view>
+        
        
 
        
