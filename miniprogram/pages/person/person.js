@@ -1,4 +1,6 @@
 // pages/person/person.js
+import request from "miniprogram\request.js"
+
 const app = getApp()
 Page({
 
@@ -7,9 +9,10 @@ Page({
    */
   data: {
     credit:"0",    //信用分
-    openid: ""
+    openid: "",
+    money: request.postRequest({'argc':'info','id':2,'res':'nickname','target':'user'}),
   },
-
+   
   
   updateDataFromCloud: function(){
     var _this = this
@@ -53,8 +56,9 @@ Page({
       }
     })
   },
+ 
 
-
+  
 
   /**
    * 生命周期函数--监听页面加载
@@ -113,3 +117,4 @@ Page({
 
   }
 })
+

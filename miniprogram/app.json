@@ -1,11 +1,14 @@
 {
   "pages": [
     
+    "pages/person/person",
+
+
     "pages/seat/seat",
     "pages/order/order",
     "pages/accuse/accuse" ,
     "pages/orderview/orderview",
-    "pages/person/person",
+    
     "pages/accusehistory/accusehistory",
     "pages/scorehistory/scorehistory",
     "pages/linkbt/linkbt",
