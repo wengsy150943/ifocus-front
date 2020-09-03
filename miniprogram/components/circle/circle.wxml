@@ -1,0 +1,33 @@
+<!--components/circle/circle.wxml-->
+ 
+<view wx:if="{{degree=='a'}}" class="biground1">
+    <block>
+     <view class="textPlace" style=""> {{obvious}} </view>
+     
+     
+     <!-- <image src="../../icon/nculogo3.png" mode="aspectFit" class="logoPlace"></image> -->
+  </block>
+</view>
+<view wx:if="{{degree=='b'}}" class="biground2">
+    <block>
+     <view class="textPlace" > {{obvious}}</view>
+     
+     <!-- <image src="../../icon/nculogo3.png" mode="aspectFit" class="logoPlace"></image> -->
+    </block>
+        
+</view>
+<view wx:if="{{degree=='c'}}" class="biground3">
+     <view class="textPlace" style=""> {{obvious}} </view>
+
+     <!-- <image src="../../icon/nculogo3.png" mode="aspectFit" class="logoPlace"></image> -->
+</view>
+   
+  
+<!--    <view  wx:elif="{{degree=='b'}}" class="mid" style="content:'yuyuyuyu'">
+      <view class="textPlace" style=""> {{obvious}} </view>
+    </view>
+    <view  wx:else="{{degree=='a'}}" class="left">
+      <view class=""> {{obvious}} </view>
+    </view>
+  </view>
+-->

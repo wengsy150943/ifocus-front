@@ -1,0 +1,4 @@
+/* pages/scorehistory/scorehistory.wxss */
+.title{
+  text-align: center;
+}

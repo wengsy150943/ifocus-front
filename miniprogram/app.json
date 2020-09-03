@@ -1,0 +1,68 @@
+{
+  "pages": [
+    
+    "pages/seat/seat",
+    "pages/order/order",
+    "pages/accuse/accuse" ,
+    "pages/orderview/orderview",
+    "pages/person/person",
+    "pages/accusehistory/accusehistory",
+    "pages/scorehistory/scorehistory",
+    "pages/linkbt/linkbt",
+
+    
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room"
+  
+
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "香樟自习室",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/seat/seat",
+      "text": "主页",
+      "iconPath": "icon/icon_home.png",
+      "selectedIconPath": "icon/icon_home_fill.png"
+    },
+    {
+      "pagePath": "pages/orderview/orderview",
+      "text": "预约",
+      "iconPath": "icon/icon_order.png",
+      "selectedIconPath": "icon/icon_order_fill.png"
+    },
+    {
+      "pagePath": "pages/accuse/accuse",
+      "text": "举报",
+      "iconPath": "icon/icon_report.png",
+      "selectedIconPath": "icon/icon_report_fill.png"
+    },
+    {
+      "pagePath": "pages/person/person",
+      "text": "我的",
+      "iconPath": "icon/icon_person.png",
+      "selectedIconPath": "icon/icon_person_fill.png"
+    }
+  ]
+  },
+
+
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}
