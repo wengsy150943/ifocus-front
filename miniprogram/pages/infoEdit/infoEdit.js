@@ -8,7 +8,7 @@ import {
   apiEdtUserImg
 } from '../../ifocusApi/api.js'
 
-const app = getApp()
+var app = getApp();
 Page({
 
   /**
@@ -78,9 +78,8 @@ Page({
 
     if (this.data.filepath) {
       console.log(this.data.filepath);
-      apiEdtUserImg(this,list,this.data.filepath);
-    }
-    else {
+      apiEdtUserImg(this, list, this.data.filepath);
+    } else {
       apiEdtUserInfo(this, list);
     }
     getBaseInfo(this, this.data.openid);
@@ -127,6 +126,9 @@ Page({
   //完成拉取预约信息，从数据库中
   onLoad: function (options) {
     //this.updateDataFromCloud()
+    this.data.openid = app.globalData.openid;
+    console.log(this.data.openid);
+    console.log(app.globalData);
     getBaseInfo(this, this.data.openid);
   },
 

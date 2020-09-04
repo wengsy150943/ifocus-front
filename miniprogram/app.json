@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/studyList/studyList",
     "pages/infoEdit/infoEdit",
     "pages/order/order",
 
@@ -7,7 +8,7 @@
     
     "pages/accuse/accuse" ,
 
-    "pages/studyList/studyList",
+    
     "pages/study/study",
     "pages/person/person",
     "pages/scorehistory/scorehistory",

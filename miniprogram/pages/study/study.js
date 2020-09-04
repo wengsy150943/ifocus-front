@@ -93,6 +93,8 @@ Page({
     //this.updateDataFromCloud()
     this.data.room_id = app.globalData.room_id;
     apiGetMateList(this,this.data.room_id);
+    console.log(this.data);
+    console.log(app.globalData.room_id);
   },
 
   /**
@@ -120,7 +122,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    app.globalData.room_id = "";
   },
 
   /**
@@ -144,66 +146,3 @@ Page({
 
   }
 })
-
-
-
-
-
-        //var mtime='aa['+'0'+'].time'
-        
-       /* var tmp=[];
-        var tmp1={
-          time:"71",
-         time_f:null,
-         seat_n:null,
-         result:null
-        };
-        console.log(res.result.data)
-        tmp1.time="33";
-        tmp.push(tmp1);*/
-
-
-
-       
-       
-        
-        // if(res.result.data.length>=5){
-        //   this.setData({
-        //     'aa[0][0]':res.result.data[0].time,
-        //     'aa[0][1]':res.result.data[0].time_flag,
-        //     'aa[0][2]':res.result.data[0].seat_num,
-        //     'aa[0][3]':res.result.data[0].result,
-  
-        //     'aa[1][0]':res.result.data[1].time,
-        //     'aa[1][1]':res.result.data[1].time_flag,
-        //     'aa[1][2]':res.result.data[1].seat_num,
-        //     'aa[1][3]':res.result.data[1].result,
-  
-        //     'aa[2][0]':res.result.data[2].time,
-        //     'aa[2][1]':res.result.data[2].time_flag,
-        //     'aa[2][2]':res.result.data[2].seat_num,
-        //     'aa[2][3]':res.result.data[2].result,
-  
-        //     'aa[3][0]':res.result.data[3].time,
-        //     'aa[3][1]':res.result.data[3].time_flag,
-        //     'aa[3][2]':res.result.data[3].seat_num,
-        //     'aa[3][3]':res.result.data[3].result,
-  
-        //     'aa[4][0]':res.result.data[4].time,
-        //     'aa[4][1]':res.result.data[4].time_flag,
-        //     'aa[4][2]':res.result.data[4].seat_num,
-        //     'aa[4][3]':res.result.data[4].result
-        //   })
-        // }else if(res.result.data.length>=1){
-        //   this.setData({
-        //     'aa[0][0]':res.result.data[0].time,
-        //     'aa[0][1]':res.result.data[0].time_flag,
-        //     'aa[0][2]':res.result.data[0].seat_num,
-        //     'aa[0][3]':res.result.data[0].result
-        //   })
-        // }
-        // else{
-        //   return ;
-        // }
-        
-        //console.log("appointment details:"+aa)

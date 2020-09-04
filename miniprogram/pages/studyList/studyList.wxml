@@ -5,7 +5,6 @@
 <view class="page-title">
   <h2 class="weui-form__title">自习室列表</h2>
 </view>
-  
   <view class='form-item'>
     <view class="leftPlaceholder" > <text class='form-title'>房间号</text></view>
     <view class="midPlaceholder"  > <text class='form-title'>人数</text></view>
