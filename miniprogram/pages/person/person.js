@@ -1,5 +1,5 @@
 // pages/person/person.js
-import {apiGetUserMoney,apiGetUserSlogan,apiGetUserNickname} from '../../ifocusApi/api.js'
+import {apiGetUserMoney,apiGetUserSlogan,apiGetUserNickname, apiGetUserImg} from '../../ifocusApi/api.js'
 
 const app = getApp()
 Page({
@@ -12,7 +12,8 @@ Page({
     openid: "2",
     money: "",
     slogan: "",
-    nickname: ""
+    nickname: "",
+    img: "",
   },
    
   
@@ -72,6 +73,7 @@ Page({
     apiGetUserMoney(that,id);
     apiGetUserSlogan(that,id);
     apiGetUserNickname(that,id);
+    apiGetUserImg(that,id);
   },
 
   /**

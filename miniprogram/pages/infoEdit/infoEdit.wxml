@@ -1,0 +1,28 @@
+<!--pages/orderview/orderview.wxml-->
+
+
+
+<view class="page-title">
+  <h2 class="weui-form__title">修改信息</h2>
+</view>
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section">
+    <view class="section__title">nickname</view>
+    <input name="nickname" placeholder="{{nickname}}" />
+  </view>
+  <view class="section">
+    <view class="section__title">slogan</view>
+    <input name="slogan" placeholder="{{slogan}}" />
+  </view>
+  <view class="section">
+    <view class="section__title">img</view>
+    <image src="{{img}}" style="height:100px;width:100px"></image>
+    <button bindtap="uploadPhoto">上传</button>
+    <image src="{{filepath}}" style="height:100px;width:100px"></image>
+  </view>
+  <view class="btn-area">
+    <button formType="submit">Submit</button>
+    <button formType="reset">Reset</button>
+  </view>
+</form>

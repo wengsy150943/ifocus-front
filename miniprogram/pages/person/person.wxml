@@ -2,7 +2,8 @@
   <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
     <view class="weui-cell__hd">
       <view class="user-info__avatar">
-        <open-data type="userAvatarUrl"></open-data>
+        <image src = "{{img}}" mode="aspectFit" style="height:64px;width:64px"></image>
+        <!-- <open-data type="userAvatarUrl"></open-data> -->
       </view>
     </view>
     <view class="weui-cell__bd">
@@ -31,6 +32,13 @@
 <view class="weui-cells">
   <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
     <navigator url="../scorehistory/scorehistory">历史记录</navigator>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</view>
+
+<view class="weui-cells">
+  <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <navigator url="../infoEdit/infoEdit">修改信息</navigator>
     <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </view>
 </view>
