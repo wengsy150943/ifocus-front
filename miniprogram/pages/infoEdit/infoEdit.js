@@ -1,4 +1,4 @@
-// pages/orderview/orderview.js
+// pages/infoEdit/infoEdit.js
 import {
   apiGetUserMoney,
   apiGetUserSlogan,
@@ -69,6 +69,7 @@ Page({
   formSubmit: function (e) {
     console.log('form发生了submit事件，携带数据为：', e.detail.value);
     var list = e.detail.value;
+    //this.data.openid = app.globalData.openid;
     list['id'] = this.data.openid;
     list['argc'] = "edt";
     list['target'] = "user";

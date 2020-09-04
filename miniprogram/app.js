@@ -1,9 +1,12 @@
 //app.js
 App({
   data:{
-    Credit:0,
-    userStatus:"",
-    tableSelect:0
+   
+   
+  },
+  globalData:{
+    openid:"2",
+    room_id:"",
   },
   onLaunch: function () {
     

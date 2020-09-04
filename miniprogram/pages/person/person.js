@@ -9,7 +9,7 @@ Page({
    */
   data: {
     credit:"0",    //信用分
-    openid: "2",
+    openid: "",
     money: "",
     slogan: "",
     nickname: "",
@@ -67,7 +67,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.updateDataFromCloud();
+    //this.updateDataFromCloud();
+    this.data.openid = app.globalData.openid;
     var that = this;
     var id = this.data.openid;
     apiGetUserMoney(that,id);

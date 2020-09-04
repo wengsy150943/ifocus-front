@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "修改信息",
+  "navigationBarTitleText": "自习室列表",
   "usingComponents": {
     "circle":"../../components/circle/circle"
   }

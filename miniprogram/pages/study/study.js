@@ -1,6 +1,7 @@
-// pages/orderview/orderview.js
-const app=getApp();
-var util = require('../../util/util')
+import { apiGetMateList } from "../../ifocusApi/api"
+
+// pages/studyList/studyList.js
+var app=getApp();
 
 Page({
 
@@ -8,8 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    item : [],
-    
+    list : [],
+    room_id :"",
   },
   updateDataFromCloud:function(){
     wx.cloud.callFunction({
@@ -89,7 +90,9 @@ Page({
   //---------------------------
   //完成拉取预约信息，从数据库中
   onLoad: function (options) {
-    this.updateDataFromCloud()
+    //this.updateDataFromCloud()
+    this.data.room_id = app.globalData.room_id;
+    apiGetMateList(this,this.data.room_id);
   },
 
   /**

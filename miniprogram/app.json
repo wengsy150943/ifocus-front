@@ -1,15 +1,23 @@
 {
   "pages": [
-    
-    "pages/seat/seat",
-    "pages/order/order",
-    "pages/accuse/accuse" ,
-    "pages/orderview/orderview",
-    "pages/person/person",
-    "pages/accusehistory/accusehistory",
-    "pages/scorehistory/scorehistory",
-    "pages/linkbt/linkbt",
     "pages/infoEdit/infoEdit",
+    "pages/order/order",
+
+    "pages/seat/seat",
+    
+    "pages/accuse/accuse" ,
+
+    "pages/studyList/studyList",
+    "pages/study/study",
+    "pages/person/person",
+    "pages/scorehistory/scorehistory",
+    
+    
+
+    "pages/accusehistory/accusehistory",
+    
+    "pages/linkbt/linkbt",
+    
     
     "pages/index/index",
     "pages/userConsole/userConsole",
@@ -42,7 +50,7 @@
       "selectedIconPath": "icon/icon_home_fill.png"
     },
     {
-      "pagePath": "pages/orderview/orderview",
+      "pagePath": "pages/studyList/studyList",
       "text": "预约",
       "iconPath": "icon/icon_order.png",
       "selectedIconPath": "icon/icon_order_fill.png"

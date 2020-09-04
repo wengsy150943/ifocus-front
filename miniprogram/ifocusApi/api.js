@@ -26,7 +26,35 @@ export function apiGetUserLog(that,id) {
   request({
     url: "http://47.94.173.35/ifocus-back/control.php",
     data : {'argc':'log','id':id,'target':'user'}
-  }).then(function(res){that.setData({log:res})});
+  }).then(function(res){console.log(res),that.setData({log:res})});
+}
+
+export function apiGetRoomList(that) {
+  request({
+    url: "http://47.94.173.35/ifocus-back/control.php",
+    data : {'target':'room_list'}
+  }).then(function(res){that.setData({list:res})});
+}
+
+export function apiGetMateList(that,room_id) {
+  request({
+    url: "http://47.94.173.35/ifocus-back/control.php",
+    data : {'argc':'userinfo','room_id':room_id,'target':'room'}
+  }).then(function(res){that.setData({list:array2json(res)})});
+}
+function array2json(res){
+  var list = [];
+  for(var x in res){
+    var json_res = JSON.parse(res[x]);
+    var temp = [];
+    for(var i in json_res){
+      temp[i] = json_res[i];
+   //   console.log(i+temp[i])
+    }
+    list[x] = json_res;
+  }
+ // console.log(list);
+  return list;
 }
 
 export function apiGetUserImg(that,id) {

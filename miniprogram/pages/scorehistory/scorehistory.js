@@ -1,13 +1,14 @@
 const { apiGetUserLog } = require("../../ifocusApi/api")
 
 // pages/scorehistory/scorehistory.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    openid:"2",
+    openid:"",
     log:""
   },
 
@@ -15,6 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.data.openid = app.globalData.openid;
     apiGetUserLog(this,this.data.openid);
   },
 

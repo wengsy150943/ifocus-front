@@ -17,40 +17,18 @@
 <view class="page" data-weui-theme="{{theme}}">
 	<view class="weui-form">
 		<view class="weui-form__text-area">
-			<h2 class="weui-form__title">选择预约时间</h2>
-		</view>
-		<view class="weui-form__control-area">
-			<view class="weui-cells__group weui-cells__group_form">
-				<view class="weui-cells weui-cells_checkbox">
-                    <checkbox-group bindchange="handleSelectTime">
-                        <label class="weui-cell weui-cell_active weui-check__label" value="{{item.id}}" wx:for="{{period}}" wx:key="id">
-                            <!-- <view class="weui-cell__hd" wx:if="{{!SelectTime_1[item.id-1]}}"> -->
-                            <view class="weui-cell__hd">
-                                <checkbox
-                                    disabled="{{(SelectTime_1[item.id-1]) || (!haveUpdateInfo)}}"
-                                    class="weui-check"
-                                    value="{{item.id}}"
-                                    checked="{{false}}"
-                                />
-                                <i class="weui-icon-checked"></i>
-                            </view>
-                            <!-- <view class="weui-cell__bd" wx:if="{{!SelectTime_1[item.id-1]}}"> -->
-                            <view class="weui-cell__bd" wx:if="{{!SelectTime_1[item.id-1]}}">
-                                <text style="color:black">{{item.value}}</text>
-                            </view>
-                            <view class="weui-cell__bd" wx:if="{{SelectTime_1[item.id-1]}}">
-                                <text style="color:grey">{{item.value}}</text>
-                                <text style="color:grey"> - 已申请</text>
-                            </view>
-                        </label>
-                    </checkbox-group>
-          <!-- <view>{{SelectTime}}</view>
-          <view>{{SelectTime_1}}</view> -->
-				</view>
-			</view>
-		</view>
+			<h2 class="weui-form__title">选择模式</h2>
+        </view>
+        <view class="weui-form__opr-area">
+        </view>
 		<view class="weui-form__opr-area">
-			<button class="weui-btn weui-btn_primary" bindtap="submit">提交申请</button>
+			<button class="weui-btn weui-btn_primary" data-hi="0"bindtap="submit">锁屏</button>
+        </view>
+        <view class="weui-form__opr-area">
+			<button class="weui-btn weui-btn_primary" data-hi="1"bindtap="submit">机器监督</button>
+        </view>
+        <view class="weui-form__opr-area">
+			<button class="weui-btn weui-btn_primary" data-hi="2"bindtap="submit">互相监督</button>
 		</view>
        
 	</view>
