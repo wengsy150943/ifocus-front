@@ -14,13 +14,15 @@
     <view class='form-item'>
       <view class="leftPlaceholder"> <text class='form-content'> user id:{{item.id}};user nickname:{{item.nickname}}
       </text></view>
-        <view class="rightPlaceholder" >  </view> 
+        <view class="rightPlaceholder" > {{alive}} </view> 
         
               
     </view>
   </view>
 
 <view class="button-order">
-<navigator url="../order/order" class="weui-btn weui-btn_primary">准备</navigator>
+<navigator wx:if="{{alive == false}}"  open-type="redirect"url="../order/order" class="weui-btn weui-btn_primary">准备</navigator>
+<button wx:if="{{alive == true}}"  class="weui-btn weui-btn_primary" bindtap="endLive">结束</button>
+
 </view>
 

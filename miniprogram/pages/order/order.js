@@ -14,7 +14,16 @@ Page({
 
   submit: function(e){
     var mode = e.currentTarget.dataset['hi'];
+    console.log(this.data.room_id);
     apiStartLiving(this,this.data.openid,this.data.room_id,mode);
+    app.globalData.alive = this.data.alive;
+    
+    wx.redirectTo({
+      url: '../study/study',
+      success: function(res){},
+      fail: function() {},
+      complete: function() {}
+    })
   },
 
   /**
@@ -23,12 +32,14 @@ Page({
   //---------------------------------
   //---------------------------------
   //获得已预约信息,返回一个可选时间段的数组
-  onLoad: function () {
-    this.data.openid = app.globalData.openid;
-    this.data.room_id = app.globalData.room_id;
-    console.log(this.data.openid);
-    console.log(app.globalData);
+  onLoad: function (options) {
+    this.setData({
+      openid : app.globalData.openid,
+      room_id : app.globalData.room_id,
+    })
+    
     apiCheckAlive(this,this.data.openid);
+    console.log(app.globalData);
   },
 
   onLuanch(){
@@ -73,7 +84,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    app.globalData.room_id = "";
+    
   },
 
   /**

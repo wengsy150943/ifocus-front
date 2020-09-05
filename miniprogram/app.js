@@ -7,6 +7,7 @@ App({
   globalData:{
     openid:"2",
     room_id:"",
+    alive:false,
   },
   onLaunch: function () {
     

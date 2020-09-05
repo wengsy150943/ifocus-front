@@ -30,9 +30,7 @@
         <view class="weui-form__opr-area">
 			<button class="weui-btn weui-btn_primary" data-hi="2"bindtap="submit">互相监督</button>
 		</view>
-    <view wx:if="{{alive}}" class="weui-form__opr-area">
-			<button class="weui-btn weui-btn_primary" data-hi="2"bindtap="submit">互相监督</button>
-		</view>
+    
        
 	</view>
 </view>

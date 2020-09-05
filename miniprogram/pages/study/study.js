@@ -1,4 +1,4 @@
-import { apiGetMateList } from "../../ifocusApi/api"
+import { apiGetMateList,apiEndLiving } from "../../ifocusApi/api"
 
 // pages/studyList/studyList.js
 var app=getApp();
@@ -9,9 +9,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    today_list : [],
-    total_list : [],
-    openid :"",
+    list: [],
+    openid :'',
+    alive: false,
+    room_id:'',
   },
   updateDataFromCloud:function(){
     wx.cloud.callFunction({
@@ -83,6 +84,12 @@ Page({
       }
   })
   },
+
+  endLive: function(){
+    apiEndLiving(this,this.data.openid);
+    app.globalData.alive = false;
+    this.onLoad();
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -92,7 +99,14 @@ Page({
   //完成拉取预约信息，从数据库中
   onLoad: function (options) {
     //this.updateDataFromCloud()
-    this.data.openid = app.globalData.openid;
+    this.setData({
+      openid : app.globalData.openid,
+      alive : app.globalData.alive,
+      room_id : app.globalData.room_id,
+    })
+    
+    console.log(app.globalData);
+    apiGetMateList(this,this.data.room_id);
   },
 
   /**

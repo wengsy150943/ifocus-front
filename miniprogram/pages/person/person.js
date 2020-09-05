@@ -68,7 +68,9 @@ Page({
    */
   onLoad: function (options) {
     //this.updateDataFromCloud();
-    this.data.openid = app.globalData.openid;
+    this.setData({
+      openid : app.globalData.openid,
+    });
     var that = this;
     var id = this.data.openid;
     apiGetUserMoney(that,id);

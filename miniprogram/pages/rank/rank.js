@@ -97,7 +97,9 @@ Page({
   //完成拉取预约信息，从数据库中
   onLoad: function (options) {
     //this.updateDataFromCloud()
-
+    this.setData({
+      openid : app.globalData.openid,
+    });
     this.data.openid = app.globalData.openid;
     apiGetTodayRank(this);
     apiGetTotalRank(this);
