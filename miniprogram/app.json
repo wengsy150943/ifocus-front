@@ -1,38 +1,17 @@
 {
   "pages": [
+    
     "pages/studyList/studyList",
     "pages/infoEdit/infoEdit",
     "pages/order/order",
 
     "pages/seat/seat",
     
-    "pages/accuse/accuse" ,
-
-    
+    "pages/rank/rank",
     "pages/study/study",
     "pages/person/person",
-    "pages/scorehistory/scorehistory",
+    "pages/scorehistory/scorehistory"
     
-    
-
-    "pages/accusehistory/accusehistory",
-    
-    "pages/linkbt/linkbt",
-    
-    
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room"
-  
 
   ],
   "window": {
@@ -57,8 +36,8 @@
       "selectedIconPath": "icon/icon_order_fill.png"
     },
     {
-      "pagePath": "pages/accuse/accuse",
-      "text": "举报",
+      "pagePath": "pages/rank/rank",
+      "text": "排行榜",
       "iconPath": "icon/icon_report.png",
       "selectedIconPath": "icon/icon_report_fill.png"
     },

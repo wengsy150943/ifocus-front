@@ -1,3 +1,4 @@
+const { apiCheckAlive, apiStartLiving } = require("../../ifocusApi/api");
 
 var app = getApp();
 
@@ -7,9 +8,14 @@ Page({
    */
   data: {
     openid:'',
+    room_id:"",
+    alive: false,
   },
 
-
+  submit: function(e){
+    var mode = e.currentTarget.dataset['hi'];
+    apiStartLiving(this,this.data.openid,this.data.room_id,mode);
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -19,12 +25,14 @@ Page({
   //获得已预约信息,返回一个可选时间段的数组
   onLoad: function () {
     this.data.openid = app.globalData.openid;
+    this.data.room_id = app.globalData.room_id;
     console.log(this.data.openid);
     console.log(app.globalData);
+    apiCheckAlive(this,this.data.openid);
   },
 
   onLuanch(){
-    this.getOpenid()
+   // this.getOpenid()
     },
     // 定义调用云函数获取openid
     getOpenid(){

@@ -36,6 +36,27 @@ export function apiGetRoomList(that) {
   }).then(function(res){that.setData({list:res})});
 }
 
+export function apiGetTodayRank(that) {
+  request({
+    url: "http://47.94.173.35/ifocus-back/control.php",
+    data : {'target':'today_rank'}
+  }).then(function(res){that.setData({today_rank:array2json(res)})});
+}
+
+export function apiGetTotalRank(that) {
+  request({
+    url: "http://47.94.173.35/ifocus-back/control.php",
+    data : {'target':'total_rank'}
+  }).then(function(res){that.setData({total_rank:array2json(res)})});
+}
+
+export function apiCheckAlive(that,id) {
+  request({
+    url: "http://47.94.173.35/ifocus-back/control.php",
+    data : {'argc':'check_alive','id':id,'target':'user'}
+  }).then(function(res){that.setData({alive:res=="False"}),console.log(that.data.alive)});
+}
+
 export function apiGetMateList(that,room_id) {
   request({
     url: "http://47.94.173.35/ifocus-back/control.php",
@@ -64,11 +85,25 @@ export function apiGetUserImg(that,id) {
   }).then(function(res){that.setData({img:res})});
 }
 
+export function apiStartLiving(that,id,room,mode) {
+  request({
+    url: "http://47.94.173.35/ifocus-back/control.php",
+    data : {'target':'user','argc':'start_live','id':id,'room_id':room_id,'state':mode}
+  }).then();
+}
+
+export function apiEndLiving(that,id) {
+  request({
+    url: "http://47.94.173.35/ifocus-back/control.php",
+    data : {'target':'user','argc':'end_live','id':id}
+  }).then();
+}
+
 export function apiEdtUserInfo(that,data) {
   request({
     url: "http://47.94.173.35/ifocus-back/control.php",
     data : data
-  }).then(function(res){that.setData({img:res})});
+  }).then(function(res){});
 }
 
 export function apiEdtUserImg(that,data,path) {

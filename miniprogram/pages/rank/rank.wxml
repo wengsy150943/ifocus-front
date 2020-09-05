@@ -1,0 +1,40 @@
+<!--pages/studyList/studyList.wxml-->
+
+
+
+<view class="page-title">
+  <h2 class="weui-form__title">总排行榜</h2>
+</view>
+  
+  <view class='form-item'>
+    <view class="leftPlaceholder" > <text class='form-title'>id</text></view>
+    <view class="rightPlaceholder"> <text class='form-title'>时长</text></view>
+  </view>
+  <view wx:for="{{total_rank}}" wx:key="index">
+    <view class='form-item'>
+      <view class="leftPlaceholder"> <text class='form-content'>{{item.id}}
+      </text></view>
+        <view class="rightPlaceholder" > {{item.all_time}} </view> 
+          
+    </view>
+  </view>
+
+
+  <view class="page-title">
+  <h2 class="weui-form__title">今日排行榜</h2>
+</view>
+  
+  <view class='form-item'>
+    <view class="leftPlaceholder" > <text class='form-title'>id</text></view>
+    <view class="rightPlaceholder"> <text class='form-title'>时长</text></view>
+  </view>
+  <view wx:for="{{today_rank}}" wx:key="index">
+    <view class='form-item'>
+      <view class="leftPlaceholder"> <text class='form-content'>{{item.id}}
+      </text></view>
+        <view class="rightPlaceholder" > {{item.time}} </view> 
+          
+    </view>
+  </view>
+
+

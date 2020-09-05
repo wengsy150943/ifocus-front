@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "选择模式",
+  "navigationBarTitleText": "自习室",
   "usingComponents": {
     "circle":"../../components/circle/circle"
   }
