@@ -18,7 +18,7 @@ Page({
    */
   enterRoom:function(e){
     app.globalData.room_id = e.currentTarget.dataset['hi'];
-    console.log(app.globalData.room_id);
+    //console.log(app.globalData.room_id);
   },
   updateDataFromCloud:function(){
     wx.cloud.callFunction({
@@ -101,7 +101,6 @@ Page({
     //this.updateDataFromCloud()
     apiGetRoomList(this);
     console.log(this.data);
-    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -115,8 +114,8 @@ Page({
   onShow: function () {
       // this.updateDataFromCloud()
       this.data.room_id = app.globalData.room_id;
-      console.log(this.data);
-      console.log(app.globalData.room_id);
+      //console.log(this.data);
+      //console.log(app.globalData.room_id);
       
   },
 

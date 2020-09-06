@@ -10,7 +10,12 @@
     <view class="midPlaceholder"  > <text class='form-title'>人数</text></view>
     <view class="rightPlaceholder"> <text class='form-title'>进入</text></view>
   </view>
+  <view wx:if="{{list.length == 0}}" class='form-item'>
+      <view class="leftPlaceholder"> <text class='form-content'> 公共自习室</text></view>
 
+      <view class="midPlaceholder"> <text class='form-content' >0 </text></view>
+      <view class="rightPlaceholder"  data-hi="公共自习室"bindtap="enterRoom"><navigator url="../study/study">进入自习室</navigator></view>
+    </view>
   <view wx:for="{{list}}">
     <view class='form-item'>
       <view class="leftPlaceholder"> <text class='form-content'> {{index}} </text></view>
