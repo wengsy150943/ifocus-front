@@ -20,6 +20,11 @@
     </view>
   </view>
 
+  <!--<live-player src="http://47.94.173.35:8080/2/10010.flv" mode="RTC" autoplay="true" bindstatechange="statechange" binderror="error" style="width: 300px; height: 225px;" />
+
+<live-pusher url="https://domain/push_stream" mode="RTC" autopush bindstatechange="statechange" style="width: 300px; height: 225px;" url="rtmp://47.94.173.35/2"/>
+-->
+
 <view class="button-order">
 <navigator wx:if="{{alive == false}}"  open-type="redirect"url="../order/order" class="weui-btn weui-btn_primary">准备</navigator>
 <button wx:if="{{alive == true}}"  class="weui-btn weui-btn_primary" bindtap="endLive">结束</button>

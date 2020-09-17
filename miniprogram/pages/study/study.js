@@ -110,7 +110,12 @@ Page({
     console.log(app.globalData);
     apiGetMateList(this,this.data.room_id);
   },
-
+  statechange(e) {
+    console.log('live-player code:', e.detail.code)
+  },
+  error(e) {
+    console.error('live-player error:', e.detail.errMsg)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
