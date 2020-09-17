@@ -4,8 +4,6 @@
     "pages/studyList/studyList",
     "pages/infoEdit/infoEdit",
     "pages/order/order",
-
-    "pages/seat/seat",
     
     "pages/rank/rank",
     "pages/study/study",
@@ -23,12 +21,7 @@
     "enablePullDownRefresh": true
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/seat/seat",
-      "text": "主页",
-      "iconPath": "icon/icon_home.png",
-      "selectedIconPath": "icon/icon_home_fill.png"
-    },
+    "list": [
     {
       "pagePath": "pages/studyList/studyList",
       "text": "预约",
