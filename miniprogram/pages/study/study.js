@@ -1,4 +1,4 @@
-import { apiGetMateList,apiEndLiving } from "../../ifocusApi/api"
+import { apiGetMateList,apiEndLiving, apiCheckAlive } from "../../ifocusApi/api"
 
 // pages/studyList/studyList.js
 var app=getApp();
@@ -84,7 +84,9 @@ Page({
       }
   })
   },
-
+  check: function(){
+    apiCheckAlive(this,this.data.openid);
+    },
   endLive: function(){
     apiEndLiving(this,this.data.openid);
     app.globalData.alive = false;

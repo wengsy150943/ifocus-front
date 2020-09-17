@@ -54,7 +54,7 @@ export function apiCheckAlive(that,id) {
   request({
     url: "http://47.94.173.35/ifocus-back/control.php",
     data : {'argc':'check_alive','id':id,'target':'user'}
-  }).then(function(res){});
+  }).then(function(res){console.log(res),that.setData({alive:false})});
 }
 
 export function apiGetMateList(that,room_id) {
