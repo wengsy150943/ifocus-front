@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "选择模式",
+  "usingComponents": {
+    "circle":"../../components/circle/circle"
+  }
+}

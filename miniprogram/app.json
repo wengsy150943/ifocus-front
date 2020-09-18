@@ -1,10 +1,11 @@
 {
   "pages": [
     
+
     "pages/studyList/studyList",
     "pages/infoEdit/infoEdit",
     "pages/order/order",
-    
+    "pages/video/video",
     "pages/rank/rank",
     "pages/study/study",
     "pages/person/person",

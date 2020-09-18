@@ -106,6 +106,45 @@ export function apiEdtUserInfo(that,data) {
   }).then(function(res){});
 }
 
+export function apiUpdateVideo(that,data,path) {
+  wx.showToast({
+    icon: "loading",
+    title: "正在上传"
+  }),
+  console.log(data),
+    wx.uploadFile({
+      url: "http://47.94.173.35/ifocus-back/control.php",
+      filePath: path, 
+      name: 'video',
+      header: { "Content-Type": "multipart/form-data" },
+      formData: data,
+      success: function (res) {
+        console.log(res);
+        that.onLoad();
+        if (res.statusCode != 200) { 
+          wx.showModal({
+            title: '提示',
+            content: '上传失败',
+            showCancel: false
+          })
+          
+          return;
+        }
+      },
+      fail: function (e) {
+        console.log(e);
+        wx.showModal({
+          title: '提示',
+          content: '上传失败',
+          showCancel: false
+        })
+      },
+      complete: function () {
+        wx.hideToast();  //隐藏Toast
+      }
+    })
+
+}
 export function apiEdtUserImg(that,data,path) {
   wx.showToast({
     icon: "loading",
