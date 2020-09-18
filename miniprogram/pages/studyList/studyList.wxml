@@ -25,5 +25,5 @@
     </view>
   </view>
 
-
-<navigator url="../video/video">视频</navigator>
+<button type="primary">
+<navigator url="../video/video">视频</navigator></button>

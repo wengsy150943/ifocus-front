@@ -35,7 +35,41 @@ Page({
     })
   },
  
+  takePhoto() {
+    const ctx = wx.createCameraContext()
+    ctx.startRecord({
+      quality: 'low',
+      success: (res) => {
+        this.setData({
+          src: res.tempImagePath
+        }),
+        console.log("start video")
+      }
+    })
+  },
+  endVideo(){
+    const ctx = wx.createCameraContext()
+  ctx.stopRecord({
+    success:(res)=>{
+      var list = [];
+    list['id'] = this.data.openid;
+    list['argc'] = "video";
+    list['target'] = "user";
+    var that = this;
+    var path = res.tempVideoPath;
+    console.log(path);
 
+        var formatImage = path.split(".")[(path.split(".")).length - 1];
+        console.log(formatImage);
+        that.data.filepath = res.tempVideoPath;
+        console.log(that.data.filepath);
+        apiUpdateVideo(that,list,that.data.filepath);
+    }
+  })  
+},
+checkAlive: function(){
+  apiCheckAlive(this,this.data.openid);
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -130,6 +130,7 @@ export function apiUpdateVideo(that,data,path) {
           
           return;
         }
+        console.log("success upload");
       },
       fail: function (e) {
         console.log(e);
