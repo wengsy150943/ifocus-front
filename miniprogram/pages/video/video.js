@@ -1,4 +1,9 @@
-const { apiCheckAlive, apiStartLiving, apiUpdateVideo } = require("../../ifocusApi/api");
+const {
+  apiCheckAlive,
+  apiStartLiving,
+  apiUpdateVideo,
+  apiEndLiving
+} = require("../../ifocusApi/api");
 
 var app = getApp();
 
@@ -7,12 +12,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    openid:'',
-    room_id:"",
+    openid: '',
+    room_id: "",
     alive: true,
-    filepath:"",
+    filepath: "",
   },
-  getVideo:function (){
+  getVideo: function () {
     var list = [];
     list['id'] = this.data.openid;
     list['argc'] = "video";
@@ -30,46 +35,55 @@ Page({
         console.log(formatImage);
         that.data.filepath = res.tempFilePath;
         console.log(that.data.filepath);
-        apiUpdateVideo(that,list,that.data.filepath);
+        apiUpdateVideo(that, list, that.data.filepath);
       }
     })
   },
- 
+
   takePhoto() {
-    const ctx = wx.createCameraContext()
+    const ctx = wx.createCameraContext();
+    console.log("start video");
     ctx.startRecord({
       quality: 'low',
       success: (res) => {
         this.setData({
-          src: res.tempImagePath
-        }),
-        console.log("start video"),
-      setTimeout()
+            src: res.tempImagePath
+          })          
       }
     })
   },
-  endVideo(){
+  endVideo() {
     const ctx = wx.createCameraContext()
-  ctx.stopRecord({
-    success:(res)=>{
-      var list = [];
-    list['id'] = this.data.openid;
-    list['argc'] = "video";
-    list['target'] = "user";
-    var that = this;
-    var path = res.tempVideoPath;
-    console.log(path);
+    ctx.stopRecord({
+      success: (res) => {
+        var list = [];
+        list['id'] = this.data.openid;
+        list['argc'] = "video";
+        list['target'] = "user";
+        var that = this;
+        var path = res.tempVideoPath;
+        //console.log(path);
 
         var formatImage = path.split(".")[(path.split(".")).length - 1];
-        console.log(formatImage);
+        //console.log(formatImage);
         that.data.filepath = res.tempVideoPath;
-        console.log(that.data.filepath);
-        apiUpdateVideo(that,list,that.data.filepath);
-    }
-  })  
-},
-checkAlive: function(){
-  apiCheckAlive(this,this.data.openid);
+        //console.log(that.data.filepath);
+        apiUpdateVideo(that, list, that.data.filepath);
+      }
+    })
+  },
+  checkAlive: function () {
+    apiCheckAlive(this, this.data.openid);
+  },
+  endLive: function () {
+    //apiEndLiving(this, this.data.openid);
+    app.globalData.alive = false;
+    wx.redirectTo({
+      url: '../study/study',
+      success: function (res) {},
+      fail: function (res) {console.log(res)},
+      complete: function () {}
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -78,27 +92,28 @@ checkAlive: function(){
   //---------------------------------
   //获得已预约信息,返回一个可选时间段的数组
   onLoad: function (options) {
+    console.log("True"=="True");
     this.data.openid = app.globalData.openid;
-    startRecord(this);
+    startRecord(this, 0);
   },
 
-  onLuanch(){
-   // this.getOpenid()
-    },
-    // 定义调用云函数获取openid
-    getOpenid(){
-      let page = this;
-      wx.cloud.callFunction({
-        name:'getOpenid',
-        complete:res=>{
-          console.log('openid--',res.result)
-          var openid = res.result.openid
-          page.setData({
-            openid:openid
-          })
-        }
-      })
-    },
+  onLuanch() {
+    // this.getOpenid()
+  },
+  // 定义调用云函数获取openid
+  getOpenid() {
+    let page = this;
+    wx.cloud.callFunction({
+      name: 'getOpenid',
+      complete: res => {
+        console.log('openid--', res.result)
+        var openid = res.result.openid
+        page.setData({
+          openid: openid
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -124,7 +139,7 @@ checkAlive: function(){
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**
@@ -148,19 +163,28 @@ checkAlive: function(){
 
   }
 })
-function circle(that){
+
+function circle(that, int) {
+  console.log(that.data.alive);
   that.takePhoto();
   setTimeout(() => {
-    that.endVideo();
+    that.endVideo()
   }, 3000);
-  that.checkAlive();
-}
-function startRecord(that){
-  //this.takePhoto();
-  console.log(that.data);
-  circle(that);
-  if(that.data.alive == false) return;
   setTimeout(() => {
-    startRecord(that);
-  }, 10000);
+    that.checkAlive()
+  }, 8000);
+  if (that.data.alive == false) {
+    clearInterval(int);
+    console.log("end");
+    that.endLive();
+  }
+  
+}
+
+function startRecord(that, depth) {
+  //this.takePhoto()
+  circle(that, int);
+  var int = setInterval(() => {
+      circle(that, int)
+  }, 15000);
 }

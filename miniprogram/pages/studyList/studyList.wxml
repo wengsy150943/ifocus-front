@@ -24,6 +24,3 @@
       <view class="rightPlaceholder"  data-hi="{{index}}"bindtap="enterRoom"><navigator url="../study/study">进入自习室</navigator></view>
     </view>
   </view>
-
-<button type="primary">
-<navigator url="../video/video">视频</navigator></button>
