@@ -3,26 +3,35 @@
 
 
 <view class="page-title">
-  <h2 class="weui-form__title">修改信息</h2>
+  <h2 class="weui-form__title">编辑个人信息</h2>
 </view>
 
 <form bindsubmit="formSubmit" bindreset="formReset">
   <view class="section">
-    <view class="section__title">nickname</view>
-    <input name="nickname" placeholder="{{nickname}}" />
-  </view>
-  <view class="section">
-    <view class="section__title">slogan</view>
-    <input name="slogan" placeholder="{{slogan}}" />
-  </view>
-  <view class="section">
-    <view class="section__title">img</view>
-    <image src="{{img}}" style="height:100px;width:100px"></image>
+  <view class="address icon-arrow"><view class="section__title">个人照片</view>
+    <image src="{{img}}" style="height:50px;width:50px"></image>
+     <span class="CSS5-left">
+    <view class="mini-button" bindtap="uploadPhoto">上传<span></span></view>
+     </span>
+    <image src="{{filepath}}" style="height:50px;width:50px"></image>
+    </view>
+     <!-- <view class="address icon-arrow">个性照片
+     <image src="{{img}}" style="height:50px;width:50px"></image></view>  -->
+   <view class="address icon-arrow">昵称<input name="nickname" placeholder="{{nickname}}" /></view> 
+    <view class="address icon-arrow">个性标签<input name="slogan" placeholder="{{slogan}}" /></view> 
+    <!-- <view class="section__title">个人照片</view>
+    <image src="{{img}}" style="height:50px;width:50px"></image>
     <button bindtap="uploadPhoto">上传</button>
-    <image src="{{filepath}}" style="height:100px;width:100px"></image>
-  </view>
+    <image src="{{filepath}}" style="height:50px;width:50px"></image>
+  </view> -->
   <view class="btn-area">
-    <button formType="submit">Submit</button>
-    <button formType="reset">Reset</button>
+    <button class="weui-btn weui-btn_primary" >提交</button>
+    <button class="weui-btn weui-btn_primary" >重置</button>
+  </view>
   </view>
 </form>
+
+      
+  
+
+

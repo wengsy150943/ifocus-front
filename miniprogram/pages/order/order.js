@@ -47,7 +47,7 @@ Page({
       room_id : app.globalData.room_id,
     })
     
-    apiCheckAlive(this,this.data.openid);
+    //apiCheckAlive(this,this.data.openid);
     console.log(app.globalData);
   },
 
@@ -55,19 +55,7 @@ Page({
    // this.getOpenid()
     },
     // 定义调用云函数获取openid
-    getOpenid(){
-      let page = this;
-      wx.cloud.callFunction({
-        name:'getOpenid',
-        complete:res=>{
-          console.log('openid--',res.result)
-          var openid = res.result.openid
-          page.setData({
-            openid:openid
-          })
-        }
-      })
-    },
+    
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

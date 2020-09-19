@@ -84,9 +84,6 @@ Page({
       }
   })
   },
-  check: function(){
-    apiCheckAlive(this,this.data.openid);
-    },
   endLive: function(){
     apiEndLiving(this,this.data.openid);
     app.globalData.alive = false;

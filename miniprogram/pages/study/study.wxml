@@ -28,7 +28,5 @@
 <view class="button-order">
 <navigator wx:if="{{alive == false}}"  open-type="redirect"url="../order/order" class="weui-btn weui-btn_primary">准备</navigator>
 <button wx:if="{{alive == true}}"  class="weui-btn weui-btn_primary" bindtap="endLive">结束</button>
-
-<button bindtap="check">检测是否在学习</button>
 </view>
 

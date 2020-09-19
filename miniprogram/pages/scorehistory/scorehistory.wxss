@@ -2,3 +2,38 @@
 .title{
   text-align: center;
 }
+
+.form-title{
+  font-weight:800;
+  font-size: 15pt;
+  margin: 10px;
+  text-align: center;
+}
+.leftPlaceholder{
+  width: 10%;
+  margin: 5px 1px;
+  padding: 10px 10px;
+  height: 2.3em;
+  line-height: 2.3em;
+  text-align: center;
+  
+  background-color: #fff;
+  /* color: rgb(64, 64, 64); */
+}
+
+.form-item{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+}
+.rightPlaceholder{
+  width: 90%;
+  margin: 5px 5px;
+  padding: 10px 10px;
+  height: 2.3em;
+  line-height: 2.3em;
+  text-align: center;
+  font-size: xx-large;
+  background-color: #fff;
+  /* color: rgb(64, 64, 64); */
+}

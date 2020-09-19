@@ -1,6 +1,8 @@
 
 
 <camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera>
-
-<button class="weui-btn weui-btn_primary" bindtap="endLive">结束</button>
-<button bindtap="checkAlive">检测是否学习</button>
+<view><text>\n</text></view>
+<button type="primary" bindtap="takePhoto">拍照</button>
+<view><text>\n</text></view>
+<button type="primary" bindtap="endLive">结束</button>
+<view><text>\n</text></view>

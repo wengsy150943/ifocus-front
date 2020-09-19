@@ -101,15 +101,15 @@ Page({
       openid : app.globalData.openid,
     });
     this.data.openid = app.globalData.openid;
-    apiGetTodayRank(this);
-    apiGetTotalRank(this);
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    apiGetTodayRank(this);
+    apiGetTotalRank(this);
   },
 
   /**

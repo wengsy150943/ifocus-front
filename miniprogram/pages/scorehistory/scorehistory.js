@@ -17,14 +17,14 @@ Page({
    */
   onLoad: function (options) {
     this.data.openid = app.globalData.openid;
-    apiGetUserLog(this,this.data.openid);
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    apiGetUserLog(this,this.data.openid);
   },
 
   /**

@@ -78,7 +78,7 @@ Page({
     apiCheckAlive(this, this.data.openid);
   },
   endLive: function () {
-    //apiEndLiving(this, this.data.openid);
+    apiEndLiving(this, this.data.openid);
     app.globalData.alive = false;
     wx.redirectTo({
       url: '../study/study',
