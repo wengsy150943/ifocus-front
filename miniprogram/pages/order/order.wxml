@@ -27,9 +27,9 @@
         <view class="weui-form__opr-area">
 			<button class="weui-btn weui-btn_primary" data-hi="1"bindtap="submit">机器监督</button>
         </view>
-        <view class="weui-form__opr-area">
+        <!--<view class="weui-form__opr-area">
 			<button class="weui-btn weui-btn_primary" data-hi="2"bindtap="submit">互相监督</button>
-		</view>
+		</view>-->
     
        
 	</view>

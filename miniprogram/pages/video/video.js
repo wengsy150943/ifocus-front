@@ -9,7 +9,7 @@ Page({
   data: {
     openid:'',
     room_id:"",
-    alive: false,
+    alive: true,
     filepath:"",
   },
   getVideo:function (){
@@ -43,7 +43,8 @@ Page({
         this.setData({
           src: res.tempImagePath
         }),
-        console.log("start video")
+        console.log("start video"),
+      setTimeout()
       }
     })
   },
@@ -78,6 +79,7 @@ checkAlive: function(){
   //获得已预约信息,返回一个可选时间段的数组
   onLoad: function (options) {
     this.data.openid = app.globalData.openid;
+    startRecord(this);
   },
 
   onLuanch(){
@@ -146,3 +148,19 @@ checkAlive: function(){
 
   }
 })
+function circle(that){
+  that.takePhoto();
+  setTimeout(() => {
+    that.endVideo();
+  }, 3000);
+  that.checkAlive();
+}
+function startRecord(that){
+  //this.takePhoto();
+  console.log(that.data);
+  circle(that);
+  if(that.data.alive == false) return;
+  setTimeout(() => {
+    startRecord(that);
+  }, 10000);
+}

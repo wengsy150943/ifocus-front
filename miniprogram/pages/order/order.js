@@ -17,13 +17,22 @@ Page({
     console.log(this.data.room_id);
     apiStartLiving(this,this.data.openid,this.data.room_id,mode);
     app.globalData.alive = this.data.alive;
-    
-    wx.redirectTo({
-      url: '../study/study',
-      success: function(res){},
-      fail: function() {},
-      complete: function() {}
-    })
+    if(mode == 0){
+      wx.redirectTo({
+        url: '../study/study',
+        success: function(res){},
+        fail: function() {},
+        complete: function() {}
+      })
+    }
+    else{
+      wx.redirectTo({
+        url: '../video/video',
+        success: function(res){},
+        fail: function() {},
+        complete: function() {}
+      })
+    }
   },
 
   /**
