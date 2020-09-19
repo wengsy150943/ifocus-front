@@ -68,15 +68,7 @@ Page({
    */
   onLoad: function (options) {
     //this.updateDataFromCloud();
-    this.setData({
-      openid : app.globalData.openid,
-    });
-    var that = this;
-    var id = this.data.openid;
-    apiGetUserMoney(that,id);
-    apiGetUserSlogan(that,id);
-    apiGetUserNickname(that,id);
-    apiGetUserImg(that,id);
+    
   },
 
   /**
@@ -91,6 +83,15 @@ Page({
    */
   onShow: function () {
     this.updateDataFromCloud()
+    this.setData({
+      openid : app.globalData.openid,
+    });
+    var that = this;
+    var id = this.data.openid;
+    apiGetUserMoney(that,id);
+    apiGetUserSlogan(that,id);
+    apiGetUserNickname(that,id);
+    apiGetUserImg(that,id);
   },
 
   /**

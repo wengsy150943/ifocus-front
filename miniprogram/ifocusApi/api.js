@@ -54,7 +54,7 @@ export function apiCheckAlive(that,id) {
   request({
     url: "http://47.94.173.35/ifocus-back/control.php",
     data : {'argc':'check_alive','id':id,'target':'user'}
-  }).then(function(res){console.log(res),that.setData({alive:(res=="True")})});
+  }).then(function(res){console.log("checking..."+(res=="True")),that.setData({alive:(res=="True")})});
 }
 
 export function apiGetMateList(that,room_id) {
@@ -103,7 +103,7 @@ export function apiEdtUserInfo(that,data) {
   request({
     url: "http://47.94.173.35/ifocus-back/control.php",
     data : data
-  }).then(function(res){});
+  }).then(function(res){console.log(res)});
 }
 
 export function apiUpdateVideo(that,data,path) {

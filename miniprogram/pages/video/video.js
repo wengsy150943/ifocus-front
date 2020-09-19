@@ -2,7 +2,8 @@ const {
   apiCheckAlive,
   apiStartLiving,
   apiUpdateVideo,
-  apiEndLiving
+  apiEndLiving,
+  apiEdtUserInfo
 } = require("../../ifocusApi/api");
 
 var app = getApp();
@@ -16,6 +17,7 @@ Page({
     room_id: "",
     alive: true,
     filepath: "",
+    money:-1,
   },
   getVideo: function () {
     var list = [];
@@ -83,7 +85,13 @@ Page({
       success: function (res) {},
       fail: function (res) {console.log(res)},
       complete: function () {}
-    })
+    });
+    var list = [];
+    list['id'] = this.data.openid;
+    list['argc'] = "edt";
+    list['target'] = "user";
+    list['money'] = this.data.money;
+    apiEdtUserInfo(this,list);
   },
   /**
    * 生命周期函数--监听页面加载
@@ -177,6 +185,10 @@ function circle(that, int) {
     clearInterval(int);
     console.log("end");
     that.endLive();
+    console.log(that.data.money);
+  }
+  else{
+    that.data.money += 5 ;
   }
   
 }
