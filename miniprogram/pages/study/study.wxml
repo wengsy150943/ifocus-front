@@ -8,11 +8,11 @@
   
   <view class='form-item'>
     <view class="leftPlaceholder" > <text class='form-title'>同学</text></view>
-    <view class="rightPlaceholder"> <text class='form-title'>围观</text></view>
+    <view class="rightPlaceholder"> <text class='form-title'>在学习中</text></view>
   </view>
   <view wx:for="{{list}}" wx:key="index">
     <view class='form-item'>
-      <view class="leftPlaceholder"> <text class='form-content'> user id:{{item.id}};user nickname:{{item.nickname}}
+      <view class="leftPlaceholder"> <text class='form-content'>{{item.nickname}}
       </text></view>
         <view class="rightPlaceholder" > {{alive}} </view> 
         

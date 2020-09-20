@@ -194,8 +194,7 @@ function circle(that, int) {
   
 }
 
-function startRecord(that, depth) {
-  //this.takePhoto()
+function startRecord(that) {
   circle(that, int);
   var int = setInterval(() => {
       circle(that, int)

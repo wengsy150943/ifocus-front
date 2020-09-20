@@ -25,7 +25,7 @@
     "list": [
     {
       "pagePath": "pages/studyList/studyList",
-      "text": "预约",
+      "text": "自习室",
       "iconPath": "icon/icon_order.png",
       "selectedIconPath": "icon/icon_order_fill.png"
     },
