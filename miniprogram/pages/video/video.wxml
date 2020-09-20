@@ -1,6 +1,6 @@
 
 
-<camera device-position="back" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera>
+<camera device-position="front" flash="off" binderror="error" style="width: 100%; height: 300px;"></camera>
 <view><text>\n</text></view>
 <button type="primary" bindtap="takePhoto">拍照</button>
 <view><text>\n</text></view>

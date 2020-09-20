@@ -47,6 +47,7 @@ Page({
     console.log("start video");
     ctx.startRecord({
       quality: 'low',
+      
       success: (res) => {
         this.setData({
             src: res.tempImagePath
